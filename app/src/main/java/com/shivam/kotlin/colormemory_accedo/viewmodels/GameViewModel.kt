@@ -69,7 +69,7 @@ class GameViewModel @Inject constructor(
 
     fun saveScore(name:String){
         viewModelScope.launch {
-            repository.saveScore(Score(id = Random(1000).nextInt(),scores = currentGameScore.value?:0,playerName = name))
+            repository.saveScore(Score(id = Random(100).nextInt(),scores = currentGameScore.value?:0,playerName = name))
         }
     }
 }

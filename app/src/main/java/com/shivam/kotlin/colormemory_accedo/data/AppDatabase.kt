@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import dagger.hilt.android.qualifiers.ApplicationContext
 
 //Database
-@Database(entities = [Score::class],version = 2,exportSchema = false)
+@Database(entities = [Score::class],version = 1,exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
 
     abstract fun getScoresDao() : ScoresDao
