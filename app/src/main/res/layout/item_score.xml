@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="score"
+            type="com.shivam.kotlin.colormemory_accedo.data.Score" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="8dp"
+            android:layout_height="70dp">
+
+            <TextView
+                android:id="@+id/playerRank"
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="36dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="2dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/playerName"
+                android:layout_width="wrap_content"
+                android:text="@{score.playerName}"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/playerRank"
+                app:layout_constraintBottom_toTopOf="@id/createdDate"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="2dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/playerScore"
+                android:layout_width="wrap_content"
+                tools:text="10"
+                android:text="@{score.scores}"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/createdDate"
+                tools:text="24Jun2020"
+                android:text="@{score.startDateFormatted}"
+                app:layout_constraintStart_toStartOf="@id/playerName"
+                app:layout_constraintTop_toBottomOf="@id/playerName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
